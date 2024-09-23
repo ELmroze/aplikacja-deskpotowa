@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aplikacja_deskpotowa.MainPage">
+
+    <ScrollView>
+        <Grid 
+            ColumnDefinitions="*,*"
+            RowDefinitions="8*,2*"
+            ColumnSpacing="70"
+            RowSpacing="35"
+            Padding="30">
+            <Grid
+                ColumnDefinitions="*,*"
+                RowDefinitions="auto,auto,auto">
+                <Label 
+                    Text="Imię"/>
+                <Editor
+                    Grid.Column="1"
+                    x:Name="imie"/>
+                <Label 
+                    Grid.Row="1"
+                    Text="Nazwisko"
+                    x:Name="nazwisko"/>
+                <Editor
+                    Grid.Row="1"
+                    Grid.Column="1"/>
+                <Label 
+                    Grid.Row="2"
+                    Text="Stanowisko"/>
+                <Picker
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    x:Name="picker"
+                    >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Kierownik</x:String>
+                            <x:String>Starszy programista</x:String>
+                            <x:String>Młodszy programista</x:String>
+                            <x:String>Tester</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Grid>
+
+            <Grid RowDefinitions="auto,auto,auto,auto,auto"
+                  ColumnDefinitions="*,*"
+                  Grid.Column="1">
+                <Label 
+                    Text="Ile znaków?"/>
+                <Editor
+                    Grid.Column="1"/>
+                <CheckBox
+                    Grid.Row="1"
+                    x:Name="check1"/>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="Małe i wielkie litery"/>
+                <CheckBox
+                    Grid.Row="2"
+                    x:Name="check2"/>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Text="Cyfry"/>
+                <CheckBox
+                    Grid.Row="3"
+                    x:Name="check3"/>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    Text="Znaki specjalne"/>
+                <Button
+                    Grid.Row="4"
+                    Grid.ColumnSpan="2"
+                    Text="Generuj hasło"
+                    Clicked="generuj"/>
+
+
+            </Grid>
+            <Button
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Text="Zatwierdź"
+                HeightRequest="40"
+                WidthRequest="170"
+                Clicked="zatwierdz"/>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
